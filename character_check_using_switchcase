@@ -1,0 +1,26 @@
+/*Program to check whether character is Upper case, Lower case or Digit by using switch case.*/
+#include <stdio.h>
+int main()
+{
+    char ch;
+    printf("Enter the character :");
+    scanf("%c",&ch);
+    switch(ch)
+    {
+        case 'A' ... 'Z':
+            printf("The character is an Upper Case.");
+            break;
+        case 'a' ... 'z':
+            printf("The character is an Lower Case.");
+            break;
+        case '0' ... '9':
+             printf("The character is an Digit.");
+             break;
+        default:
+        printf("The character not an alphabet or digit.");
+    }
+             
+            
+ return 0;       
+    
+}
