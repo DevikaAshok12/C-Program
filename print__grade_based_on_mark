@@ -1,0 +1,31 @@
+/*Program to print the grade for a given percentage*/
+
+#include <stdio.h>
+int main()
+{
+    int mark;
+    printf("Enter the percentage:");
+    scanf("%d",&mark);
+    if(mark>90 && mark<=100)
+    {
+        printf("The Grade is A");
+    }
+    else if(mark>70 && mark<91)
+    {
+        printf("The Grade is B");
+    }
+    else if(mark>50 && mark<71)
+    {
+        printf("The Grade is C");
+    }
+    else if(mark<=50)
+    {
+        printf("The Grade is F");
+    }
+    else
+    {
+        printf("Error:Please enter the percentage less than or equal to 100");
+    }
+    return 0;
+    
+}
