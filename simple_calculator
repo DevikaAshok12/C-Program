@@ -1,0 +1,30 @@
+/*Program for implement a simple calculator*/
+#include <stdio.h>
+int main()
+{
+    char sign;
+    int num1,num2;
+    printf("Enter the Two numbers:\n");
+    scanf("%d %d",&num1,&num2);
+    printf("Enter the operator:");
+    scanf(" %c",&sign);
+    switch(sign)
+    {
+        case '+':
+            printf("The Result is : %d",num1+num2);
+            break;
+        case '-':
+             printf("The Result is : %d",num1-num2);
+             break;
+        case 'x':
+             printf("The Result is : %d",num1*num2);
+             break;
+        case '/':
+             printf("The Result is : %d",num1/num2);
+             break;
+        default:
+             printf("Invalid Operator");
+             
+    }
+    return 0;
+}
