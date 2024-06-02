@@ -1,0 +1,27 @@
+/*Program to generate positive Fibonacci numbers*/
+
+#include <stdio.h>
+int main()
+{
+    int n;
+    printf("Enter a number:");     //ask user for input
+    scanf("%d",&n);
+    if(n >= 0)      //check whether it is positive or negative
+    {
+        int first=0;
+        int second=1;
+        int third=0;
+        while(third <= n)     //started the loop for print the series ,check till the number provided by the user
+        {
+            printf("%d ",third);
+                first=second;     //assigning the second value to first
+                second=third;     //assigning the third value to second
+                third=first+second; //third value should be the sum of first and second
+        }
+    }
+    else
+    {
+        printf("Invalid input"); //if the input value is a negative number print invalid input
+    }
+  }
+    
