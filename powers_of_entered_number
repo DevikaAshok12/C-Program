@@ -1,0 +1,17 @@
+/*rogram to print the power of N series using Loops*/
+#include <stdio.h>
+int main()
+{
+    int base,expr;
+    int power=1;
+    printf("Enter the base value :\n");
+    scanf("%d",&base);
+    printf("Enter the exponential value :\n");
+    scanf("%d",&expr);
+    for(int i=0;i<=expr;i++)
+    {
+        printf("%d ",power);
+        power=power*base;
+    }
+    return 0;
+}
