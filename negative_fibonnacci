@@ -1,0 +1,31 @@
+/*Program to print negative fibonnacci numbers */
+#include <stdio.h>
+
+int main()
+{
+    int n;
+    printf("Enter a number:");  //ask user for input
+    scanf("%d",&n);
+    if(n <=0)       //check whether it is positive or negative
+    {
+        int first=0;
+        int second=1;
+        int third=0;
+        while(third >= n && third<=-n) //to check the given value is greater then then stop to that value
+        {
+            printf("%d ",third);
+            first=second; //assign second value to first
+            second=third;//assign third value to second
+            third=first-second; //third value is diifference of 1st and 2nd
+        }
+    }
+    else
+    {
+        printf("Invalid input"); //if user input a +ve number print invalid
+    }
+    return 0;
+
+
+
+
+}
