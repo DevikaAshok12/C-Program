@@ -1,0 +1,49 @@
+/*P to generate AP, GP, HP series*/
+#include <stdio.h>
+
+int main()
+{
+    int A,R,N;     //initializing variables A(to store 1st number),R(common ratio),N(no:of terms)
+    printf("Enter the First Number 'A':\n");
+    scanf("%d",&A);
+    printf("Enter the Common Difference / Ratio 'R':\n");
+    scanf("%d",&R);
+    printf("Enter the number of terms 'N':\n");
+    scanf("%d",&N);
+    if(A>=1 && R>=1 && N>=1) //check the 1st term,common difference,number of terms should be greater than 1 
+    {
+        int gp_value=A; //store the 1st term in other variable
+        int ar_value=A;
+        printf("AP = ");
+        for(int i=1;i<=N;i++) //start a for loop to print the A.P
+        {
+            printf("%d,",ar_value);  //print the A.P term
+            ar_value=ar_value+R;     //update the value of ar_value by adding common ration to it 
+        }
+        printf("\n");
+        printf("GP = ");
+        for(int j=1;j<=N;j++)       //start a for loop to print the G.P 
+        {
+            printf("%d,",gp_value); //print G.P series
+            gp_value=gp_value*R; //update the value of gp_value by multiplying it with common difference
+        } 
+        printf("\n");
+        printf("HP = ");
+        float num;
+
+        for(int k=1;k<=N;k++)     //start for loop to print H.P
+        {
+           num=1/(float)A;// find reciprocal of each term in A.P
+           printf("%f,",num);
+           A=A+R; //each term in A.P
+        }
+    }
+    else
+    {
+        printf("Invalid input"); //error message
+    }
+    return 0;
+
+
+
+}
