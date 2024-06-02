@@ -1,0 +1,36 @@
+/*Program to find perfect number*/
+#include <stdio.h>
+
+int main()
+{
+    int count=0,n;    //initialising variables
+    printf("Enter a number:"); //ask user for  the input number
+    scanf("%d",&n);
+    if(n>0)          //check if entered number is greater than zero
+    {
+    for(int i=1;i<n;i++)      //start a for loop to find factors of the number
+    {
+        if(n%i ==0)           //check the modulus
+        {
+            count=count+i;     //update the count value
+        }
+    }
+    if (count == n)             //if count value is equal to number
+    {
+        printf("Yes, entered number is perfect number");       //print it is a perfect number
+    }
+    else
+    {
+        printf("No, entered number is not a perfect number"); //else print not perfect
+    }
+    }
+    else
+    {
+        printf("Error : Invalid Input, Enter only positive number");
+    }
+
+
+
+
+return 0;
+}
