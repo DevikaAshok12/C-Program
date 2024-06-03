@@ -1,0 +1,26 @@
+/*4. WAP to create an array of int having size as 10. Initially fill all index as zero. Read an input number from the user, get the digit from the number and store the number to their corresponding index of the array.
+                  input num = 12348
+                  arr[8] index = 8
+                  arr[4] index = 4
+                  arr[3] index = 3, so like this u have to store.*/
+#include <stdio.h>
+
+int main()
+{
+    int num;
+    int array[10]={0,0,0,0,0,0,0,0,0,0};
+    printf("Enter the number");
+    scanf("%d",&num);
+    while(num>0)
+    {
+        int rem=num%10;
+        num=num/10;
+        array[rem]=rem;
+    }
+
+    for(int i=0;i<10;i++)
+    {
+        printf("array[%d]=%d\n",i,array[i]);
+    }
+
+}
