@@ -1,0 +1,13 @@
+//multiplication by 2 using shift operator 
+#include <stdio.h>
+
+int main()
+{
+    int num;
+    printf("Enter the number");
+    scanf("%d",&num);
+    int ans=(num<<1);
+    printf("%d x 2=%d",num,ans);
+    return 0;
+
+}
