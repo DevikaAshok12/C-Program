@@ -1,0 +1,16 @@
+/*Program to display the n terms of a harmonic series and their sum.*/
+#include <stdio.h>
+int main()
+{
+    int first,cd,n;
+    printf("Enter the 1st term,c.d,no:terms");
+    scanf("%d %d %d",&first,&cd,&n);
+    float ap=0;
+    for(int i=1;i<=n;i++)
+    {
+        ap=1/(float)first;
+        printf("%.2f\n",ap);
+        first=first+cd;
+    }
+    return 0;
+}
