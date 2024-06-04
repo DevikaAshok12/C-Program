@@ -1,0 +1,59 @@
+#include <stdio.h>
+
+int main()
+{
+    int start_day,choice,n;//initializing the variables
+    printf("Enter the value of 'n' :");    //ask user to enter the first day
+    scanf("%d",&n);
+    if(1 <= n && n<= 365)         // if n value is between 1 and 365 ;Positive integer say 'n'. Where 1 <= 'n' <= 365.
+    {
+        printf("Choose First Day :\n \n1. Sunday\n2. Monday\n3. Tuesday\n4. Wednesday\n5. Thursday\n6. Friday\n7. Saturday");//list days to the user to select the 1st day
+        printf("Enter the option to set the first day : ");//in a week let us assume first day is 'Sunday', then second day will be 'Monday' and so on
+        scanf("%d",&start_day);
+        if(1 <= start_day && start_day <=7) //check user select option is between 1 and 7
+        {
+            choice=((n+start_day-1)%7);     //7%7=0 also 14%7=0 ,if user inputs any of the multiples of 7 then default statement is printing
+            switch(choice)                 //from start day we need to calculate upto n day to print the which day of year
+            {
+                case 1:                     // case for printing the output based on the user inputs
+                    printf("The day is Sunday");
+                    break;
+                case 2:
+                    printf("The day is Monday");
+                    break;
+                case 3:
+                    printf("The day is Tuesday");
+                    break;
+                case 4:
+                    printf("The day is Wednesday");
+                    break;
+                case 5:
+                    printf("The day is Thursday");
+                    break;
+                case 6:
+                    printf("The day is Friday");
+                    break;
+                default:
+                    if(choice == 0)
+                    {
+                        printf("The day is Saturday");
+                    }
+                    
+            }
+        }
+        else
+        {
+            printf("Error: Invalid input, first day should be > 0 and <= 7"); //if condition gets false print error messages
+        }
+    }
+    else
+    {
+        printf("Error: Invalid Input, n value should be > 0 and <= 365");//Positive integer say 'N'. Where 1 <= 'N' <= 365,if it fails print this error msg
+    }
+    return 0;
+
+
+
+
+
+}
