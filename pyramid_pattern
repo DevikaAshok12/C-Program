@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main()
+{
+    int n;
+    printf("Enter the number:"); //read input from the user
+    scanf("%d",&n);         //1st divide the pyramid into two parts ;1st part contains n rows
+    for(int i=0;i<n;i++) //for loop for'n' row elements
+    {
+        int count=n-i;     //initializing a count variable
+        for(int j=0;j<=i;j++) //for loop for coloumn
+        {
+            printf("%d ",count); //in the 1st row print the n value itself and in 2nd row 1st decrement the n value by 1 and then incrementing
+            count++;     //updating the count value
+        }
+        printf("\n");   // after completing a row enter to next line
+    }
+    for(int k=1;k<n;k++)    //next nested for loop for 2nd part
+    {
+        for(int j=1;j<=n-k;j++)  //for loop for column elements
+        {
+            int sum=k+j;        //printing row +coloumn value
+            printf("%d ",sum);
+        }
+        printf("\n");   //after completing a row enter into next line
+    }
+
+    return 0;
+
+}
