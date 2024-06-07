@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main()
+{
+    int num,N,M; 
+    printf("Enter the number:"); 
+    scanf("%d",&num);
+    printf("Enter 'N':"); //index position in which we have to check whether bit in that position is set or not
+    scanf("%d",&N);
+    printf("Enter 'M':");//index position we have to clear the bit
+    scanf("%d",&M);
+    if (((num>>(N))&1==1)) //checking Nth bit is set or not
+    {
+        num=(num &(~(1<<M)));
+        printf("Updated value of num is %d",num);
+    }
+    else
+    {
+        printf("Updated value of num is %d",num);
+    }
+    return 0;
+
+
+
+
+}
