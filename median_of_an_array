@@ -1,0 +1,90 @@
+#include <stdio.h>
+
+int main()
+{
+    int size1,size2;
+    float median1,median2; //initializing variables
+    printf("Enter the 'n' value for Array A:"); //read size of array1 from user 
+    scanf("%d",&size1);
+    printf("Enter the 'n' value for Array B:"); //read size of array2 from user
+    scanf("%d",&size2);
+    int A[size1]; 
+    int B[size2];
+    printf("Enter the elements one by one for Array A:");
+    for(int i=0;i<size1;i++) //read array1 elements from user
+    {
+        scanf("%d",&A[i]);
+    }
+    printf("Enter the elements one by one for Array B:");
+    for(int i=0;i<size2;i++) //read array2 elements from user
+    {
+        scanf("%d",&B[i]);
+    }
+    int temp;
+
+    for(int i=0;i<=size1-2;i++) //sorting of array1
+    {
+        for(int j=0;j<=size1-2-i;j++)
+        {
+            if(A[j+1]<A[j])
+            {
+                temp=A[j];
+                A[j]=A[j+1];
+                A[j+1]=temp;
+            }
+        }
+    }
+    int temp2;
+    for(int i=0;i<=size2-2;i++) //sorting of array 2
+    {
+        for(int j=0;j<=size2-2-i;j++)
+        {
+            if(B[j+1]<B[j])
+            {
+                temp2=B[j];
+                B[j]=B[j+1];
+                B[j+1]=temp2;
+            }
+        }
+    }
+    //median of array1
+
+    if(size1%2==0)
+    {
+        int x=size1/2;
+        int y=x-1;
+        float z=(float)(A[x]+A[y])/2;
+
+        printf("Median of array1 :%g\n",z);
+        median1=z;
+    }
+    else
+    {
+        int m=size1/2;
+        int z=A[m];
+        printf("Median of array1 :%d\n",z);
+        median1=z;
+    }
+
+    //median of array2
+    if(size2%2==0)
+    {
+        int x=size2/2;
+        int y=x-1;
+        //printf("x=%d y=%d\n",x,y);
+        float n=(float)(B[x]+B[y])/2;
+        printf("Median of array2 :%g\n",n);
+        median2=n;
+    }
+    else
+    {
+        int m=size2/2;
+        int n=B[m];
+        printf("Median of array2 :%d\n",n);
+        median2=n;
+    }
+
+    float median=(median1+median2)/2;
+    printf("Median of both arrays :%g",median);
+    return 0;
+}
