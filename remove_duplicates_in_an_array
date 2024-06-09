@@ -1,0 +1,55 @@
+#include <stdio.h>
+
+void fun(int *arr1, int size, int *arr2, int *new_size);
+
+int main()
+{
+    int size;
+    printf("Enter the size: ");
+    //read size from user
+    scanf("%d",&size); //Read size and elements into the array.
+    int arr1[size];
+    //read array elements from user
+    printf("Enter elements into the array: ");
+    for(int i=0;i<size;i++)
+    {
+        scanf("%d",&arr1[i]);
+    }
+    //ARRAY to store the result
+    int new_size=0;
+    int arr2[size];
+    fun(arr1, size, arr2, &new_size); //function call- pass array and size to the function
+    printf("After removing duplicates: ");
+    for(int i=0;i<new_size;i++)
+    {
+        printf("%d ",arr2[i]); //print new_array after removing duplicates
+    }
+    return 0;
+    
+    
+    
+}
+void fun(int *arr1, int size, int *arr2, int *new_size)
+{
+    //arr2[0]=arr1[0];
+    //*new_size=0;
+    for(int i=0;i<size;i++)
+    {
+        int flag=1;
+        for(int j=0;j<*new_size;j++)
+        {
+            if(arr1[i]==arr2[j]) //check whether duplicate elements is present or not
+            {
+                flag=0; //if it is present break, no need to copy the element
+                break;
+            }
+        }
+        //copy non-duplicate elements into new array.
+        if(flag)
+        { 
+            arr2[*new_size]=arr1[i];  
+            (*new_size)++; //increment the new size
+        }
+    }
+}
+    
